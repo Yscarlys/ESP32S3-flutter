@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'APP DE YSCA',
       debugShowCheckedModeBanner: false,
-      home: Inicio()
+      home: SafeArea(child: Inicio())
     );
   }
 }
