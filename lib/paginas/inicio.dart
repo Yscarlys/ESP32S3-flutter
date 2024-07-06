@@ -34,7 +34,6 @@ class Inicio extends StatelessWidget {
     return <Widget>[
       Container(
         width: 300.0,
-        height: 400.0,
         decoration: const BoxDecoration(
             color: Color(0xff141b22),
             borderRadius: BorderRadius.all(Radius.circular(20))),
@@ -43,7 +42,7 @@ class Inicio extends StatelessWidget {
           children: <Widget>[
             Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
               Container(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.only(top: 20.0),
                 child: Text(
                   'Temperatura'.toUpperCase(),
                   style: const TextStyle(
@@ -64,7 +63,7 @@ class Inicio extends StatelessWidget {
                         Container(
                             padding: const EdgeInsets.all(20.0),
                             child: CircularPercentIndicator(
-                              radius: 60.0,
+                              radius: 70.0,
                               lineWidth: 12.0,
                               percent: 0.5,
                               linearGradient: const LinearGradient(
@@ -82,7 +81,7 @@ class Inicio extends StatelessWidget {
                               padding: const EdgeInsets.all(20.0),
                               child: CircularPercentIndicator(
                                 backgroundColor: Colors.transparent,
-                                radius: 60.0,
+                                radius: 70.0,
                                 lineWidth: 12.0,
                                 percent: 0.5,
                                 linearGradient: const LinearGradient(
@@ -99,14 +98,18 @@ class Inicio extends StatelessWidget {
                             padding: const EdgeInsets.all(20.0),
                             child: CircularPercentIndicator(
                               backgroundColor: Colors.transparent,
-                              radius: 60.0,
+                              radius: 70.0,
                               lineWidth: 12.0,
                               percent: 1 - 0.7,
-                              center: Transform.flip(flipX: true,
-                                child: const Text("100°C", style: TextStyle(color: Colors.white, fontSize: 18),)),
+                              center: Transform.flip(
+                                  flipX: true,
+                                  child: const Text(
+                                    "100°C",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 18),
+                                  )),
                               progressColor: const Color(0xff141b22),
-                            )
-                            ),
+                            )),
                       ],
                     ))
               ],
@@ -122,42 +125,52 @@ class Inicio extends StatelessWidget {
             ),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(vertical: 30.0, horizontal: 0.0),
+                  const EdgeInsets.symmetric(vertical: 20.0, horizontal: 0.0),
               child: Transform.scale(
                 scale: 0.8,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Stack(
-                        alignment: Alignment.centerRight,
-                        children: [
-                        TextField(
-                            decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        child: Stack(
+                          alignment: Alignment.centerRight,
+                          children: [
+                            TextField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ),
+                                hintText: "Ingrese el SetPoint",
+                                hintStyle: const TextStyle(
+                                  color: Color(0x862A2D2E), 
+                                  fontSize: 18.0,
+                                ),
                               ),
-                              hintText: "Ingrese el SetPoint",
-                              hintStyle: const TextStyle(
-                                  color: Colors.black, fontSize: 20.0),
                             ),
-                          ),
-                         TextButton(onPressed:(){},
-                         child: const Text("Aceptar", style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w600),),
-                         style: TextButton.styleFrom(
-                          fixedSize: const Size(90, 52),
-                          backgroundColor:  const Color.fromARGB(250, 241, 163, 17),
-                          foregroundColor: Colors.black,
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(topRight: Radius.circular(10), bottomRight: Radius.circular(10))
-                                    )),
-                          )
-                      ],)
-                    ),
+                            TextButton(
+                              onPressed: () {},
+                              style: TextButton.styleFrom(
+                                  fixedSize: const Size(double.infinity, 56),
+                                  backgroundColor:
+                                      const Color.fromARGB(250, 241, 163, 17),
+                                  foregroundColor: Colors.black,
+                                  shape: const RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(10),
+                                          bottomRight: Radius.circular(10)))),
+                              child: const Text(
+                                "Aceptar",
+                                style: TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.w600),
+                              ),
+                            )
+                          ],
+                        )),
                   ],
                 ),
               ),
@@ -172,7 +185,6 @@ class Inicio extends StatelessWidget {
     return <Widget>[
       Container(
         width: 300.0,
-        height: 400.0,
         decoration: const BoxDecoration(
             color: Color(0xff141b22),
             borderRadius: BorderRadius.all(Radius.circular(20))),
